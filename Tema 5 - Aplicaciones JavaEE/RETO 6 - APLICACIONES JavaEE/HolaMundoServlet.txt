@@ -1,0 +1,33 @@
+// To save as "<TOMCAT_HOME>\webapps\hello\WEB-INF\classes\HelloServlet.java"
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+ 
+public class HolaMundoServlet extends HttpServlet {
+   @Override
+   public void doGet(HttpServletRequest request, HttpServletResponse response)
+         throws IOException, ServletException {
+ 
+      // Establece el tipo MIME del mensaje de respuesta
+      response.setContentType("text/html");
+      // Crea un flujo de salida para escribir la respuesta a la petici�n del cliente
+      PrintWriter out = response.getWriter();
+ 
+      // Escribe el mensaje de respuesta en una p�gina html
+      try {
+         out.println("<html>");
+         out.println("<head><title>Hola Mundo</title></head>");
+         out.println("<body>");
+         out.println("<h1>Hola Mundo</h1>");  // dice hola
+         // Muestra informaci�n de la petici�n del cliente
+         out.println("<p>Request URI: " + request.getRequestURI() + "</p>");
+         out.println("<p>Protocolo: " + request.getProtocol() + "</p>");
+         out.println("<p>Direcci�n remota: " + request.getRemoteAddr() + "</p>");
+         // Genera un n�mero aleatorio para cada petici�n
+         out.println("<p>N�mero aleatorio: <strong>" + Math.random() + "</strong></p>");
+         out.println("</body></html>");
+      } finally {
+         out.close();  // Cierra el flujo de salida
+      }
+   }
+}

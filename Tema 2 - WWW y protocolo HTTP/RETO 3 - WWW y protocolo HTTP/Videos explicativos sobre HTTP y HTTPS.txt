@@ -1,0 +1,16 @@
+Videos explicativos sobre HTTP y HTTPS
+
+1. Protocolos básicos de internet (Universidad Politécnica de Valencia)
+https://youtu.be/wtOKwmwgofc
+
+2. Explicacion extensa sobre el protocolo HTTP
+https://youtu.be/l6oF_RpBf64
+
+3. Conceptos muy técnicos del protocolo HTTP y HTTPS
+https://youtu.be/ARmQMSeU9fU
+
+4. El protocolo HTTP - ver. básica (Universidad Politécnica de Valencia)
+https://youtu.be/wHXRmq75N_Y
+
+5. El protocolo HTTP - ver. 1.0 (Universidad Politécnica de Valencia)
+https://youtu.be/CPUbmKc3rtM

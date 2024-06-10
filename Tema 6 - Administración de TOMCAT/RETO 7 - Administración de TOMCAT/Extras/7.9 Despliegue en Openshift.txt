@@ -1,0 +1,2 @@
+
+Siguiendo las instrucciones del documento anterior, realiza el despliegue de una aplicacion en la nube de OPENSHIFT.

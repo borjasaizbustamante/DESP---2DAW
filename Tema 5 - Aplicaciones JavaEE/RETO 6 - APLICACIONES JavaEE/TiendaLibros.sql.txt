@@ -1,0 +1,25 @@
+create database TiendaLibros;
+
+use TiendaLibros;
+
+Create table libros(
+id	int,
+titulo	varchar(50),
+autor	varchar(50),
+precio	float,
+cantidad	int,
+primary key(id));
+
+insert into libros values
+(1001, 'Servicios de red e Internet', 'Alvaro Garcia', 25, 100);
+insert into libros values
+(1002, 'Apache Tomcat 7', 'Aleksa Vukotic', 22.22, 22);
+insert into libros values
+(1003, 'Beginning JSP, JSF, and Tomcat Web Developement', 'Giulio Zambon', 33.33, 33);
+insert into libros values
+(1004, 'Tomcat, the definitive guide', 'Jason Brittain', 55.55, 55);
+insert into libros values
+(1005, 'Profesional Apache Tomcat', 'Vivek Chopra', 66.66, 66);
+
+
+select * from libros;

@@ -1,0 +1,7 @@
+Estándares web
+
+https://www.gmedia.es/blog/protocolo-http-http2-mejoras/
+
+https://linube.com/blog/http3-quic/
+
+https://kinsta.com/es/blog/que-es-http3/
