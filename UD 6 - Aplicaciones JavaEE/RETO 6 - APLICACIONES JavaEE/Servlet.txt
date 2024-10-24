@@ -1,3 +1,0 @@
-Qué es uns ervlet?
-
-http://www.edu4java.com/es/servlet/servlet1.html
