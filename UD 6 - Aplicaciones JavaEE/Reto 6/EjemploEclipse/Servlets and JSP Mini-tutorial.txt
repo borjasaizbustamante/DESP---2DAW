@@ -1,0 +1,97 @@
+This a simple Example of servlets and JSP for eclipse:
+
+
+If you have NEVER created a Web Project or downladed a Tomcat, just follow this steps.
+
+1) FIRST: create a Dynamic Web Project. We do not care the name or whatever. 
+
+2) Now create a server. Pick and download the Tomcat v10.1. Do not try to open it. 
+
+3) Third, delete the first Web Project. 
+
+4) Congratulations, now you have no Projects BUT yo do a Tomcat. 
+
+
+Now, let's try a real project. 
+
+1) Create a Dynamic Web Project named PruebasDespliegueServletsJSP
+
+2) In the same window you add the project name, under 'Target Runtime', pick 'apache-tomcat-10.1.28'. Accept.
+
+3) Add the project to the server with Add and Remove. 
+
+4) Congratulations! The project is set. Now add a index.html page to src/main/webapp/
+
+5) Start the Server. You should see the page using this URL:
+ 
+			http://localhost:8080/PruebasDespliegueServletsJSP/
+			
+			
+
+Ok... this is a Dynamic Web Project working as a Static one, just serving pages. Lets spicy it.
+
+1) File > New > Other and select 'Servlet'. Name it 'HolaMundoServlet', package 'com.example'. Accept
+
+2) Eclipse creates the class AND prepares the project for the servlet. We do not need the web.xml 
+	configuration file this time because we are using Java 20 (or 17 or whatever) and we use 
+	annotations (the @WebServlet text) instead of the old-fashioned shit. But it is the same. 
+	
+3) Open HolaMundoServlet.java. Do not touch anything. Make the class like this. 
+
+	// If somebody makes a GET HTTP request to /HolaMundoServlet, we will 
+	// Answer with an HTML web page
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// HTTP header MIME-Type
+		response.setContentType("text/html");
+
+		PrintWriter out = response.getWriter();
+		try {
+			// An actual hand-made html page
+			out.println("<html>");
+			out.println("<head><title>Hola Mundo</title></head>");
+			out.println("<body>");
+			out.println("<h1>Hola Mundo</h1>"); // dice hola
+			out.println("<p>Request URI: " + request.getRequestURI() + "</p>");
+			out.println("<p>Protocolo: " + request.getProtocol() + "</p>");
+			out.println("<p>Dirección remota: " + request.getRemoteAddr() + "</p>");
+			out.println("<p>Número aleatorio: <strong>" + Math.random() + "</strong></p>");
+			out.println("</body></html>");
+		} finally {
+			out.close();
+		}
+	}
+
+	// If somebody makes a POST HTTP request to /HolaMundoServlet, we will 
+	// do like if it was a get. This was a common practice to avoid problems
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
+4) Deploy. You should see the Servlet working using this URL:
+ 
+			http://localhost:8080/PruebasDespliegueServletsJSP/HolaMundoServlet
+			
+5) Note the @WebServlet("/HolaMundoServlet") is saying to the Tomcat where to find the class 
+	which will answer to the request. Cool, ain't it? We can use the web.xml instead, which 
+	makes the job tedious and prone to errors like in 2004 (do not!).
+	
+	
+
+Let's go for the JSP now. 
+
+1) File > New > Other and select 'JSP'. Name it Hello.jsp
+
+2) Add to the body these lines:
+
+	<H2>Hi there!! I am a JSP!!</H2>
+	<P>Project updated 11/12/2024</P>
+
+3) Deploy. You should see the Servlet working using this URL:
+
+			http://localhost:8080/PruebasDespliegueServletsJSP/Hello.jsp
+
+
+... and that's all, folks!!
+	
