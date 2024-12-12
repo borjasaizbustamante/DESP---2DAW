@@ -32,11 +32,14 @@ Ok... this is a Dynamic Web Project working as a Static one, just serving pages.
 
 1) File > New > Other and select 'Servlet'. Name it 'HolaMundoServlet', package 'com.example'. Accept
 
-2) Eclipse creates the class AND prepares the project for the servlet. We do not need the web.xml 
+2) Now, with the server already added, right click on the new project > properties > project facets. 
+	Go to Runtime, and add the Tomcat Server . Now you have all libraries needed in your Java.
+
+3) Eclipse creates the class AND prepares the project for the servlet. We do not need the web.xml 
 	configuration file this time because we are using Java 20 (or 17 or whatever) and we use 
 	annotations (the @WebServlet text) instead of the old-fashioned shit. But it is the same. 
 	
-3) Open HolaMundoServlet.java. Do not touch anything. Make the class like this. 
+4) Open HolaMundoServlet.java. Do not touch anything. Make the class like this. 
 
 	// If somebody makes a GET HTTP request to /HolaMundoServlet, we will 
 	// Answer with an HTML web page
@@ -69,11 +72,11 @@ Ok... this is a Dynamic Web Project working as a Static one, just serving pages.
 		doGet(request, response);
 	}
 	
-4) Deploy. You should see the Servlet working using this URL:
+5) Deploy. You should see the Servlet working using this URL:
  
 			http://localhost:8080/PruebasDespliegueServletsJSP/HolaMundoServlet
 			
-5) Note the @WebServlet("/HolaMundoServlet") is saying to the Tomcat where to find the class 
+6) Note the @WebServlet("/HolaMundoServlet") is saying to the Tomcat where to find the class 
 	which will answer to the request. Cool, ain't it? We can use the web.xml instead, which 
 	makes the job tedious and prone to errors like in 2004 (do not!).
 	
